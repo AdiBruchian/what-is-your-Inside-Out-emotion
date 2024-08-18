@@ -5,7 +5,8 @@ This project explores and compares various dropout methods for improving the gen
 
 ## Methodology
 1- Each dropout method was tested with various parameters on the **validation set** to identify the best-performing configuration.
-2 - The best parameters were then used to evaluate performance on the test set.
+
+2- The best parameters were then used to evaluate performance on the test set.
 
 ## Dataset
 We use the FER13 dataset, which contains grayscale images classified into seven distinct emotions. 
