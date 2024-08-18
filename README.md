@@ -11,5 +11,5 @@ This project explores and compares various dropout methods for improving the gen
 We use the FER13 dataset, which contains grayscale images classified into seven distinct emotions. 
 
 <p align="center">
-<img width="760" height="400" src="https://www.mdpi.com/electronics/electronics-12-02707/article_deploy/html/images/electronics-12-02707-g001.png">
+<img src="https://www.mdpi.com/electronics/electronics-12-02707/article_deploy/html/images/electronics-12-02707-g001.png">
 </p>
