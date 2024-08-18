@@ -4,7 +4,7 @@
 This project explores and compares various dropout methods for improving the generalization of deep neural networks. Specifically, we focus on evaluating the effectiveness of different dropout techniques in the context of emotion classification using the ResNet-18 architecture on the FER13 dataset.
 
 ## Methodology
-1- Each dropout method was tested with various parameters on the **validation set** to identify the best-performing configuration.
+1- Each dropout method was tested with various parameters on the **validation set** to identify the best-performing configuration.  
 2- The best parameters were then used to evaluate performance on the **test set**.
 
 ## Dataset
@@ -31,12 +31,12 @@ results | Directory that contains JSON files with experiment results for differe
 best_results | Directory that contains JSON files with the best results and parameters for each dropout method on the test set.
 
 ## References
-[1] FER-2013 Dataset: https://www.kaggle.com/datasets/msambare/fer2013
-[2] Yarin Gal, Jiri Hron, Alex Kendall. "Concrete Dropout" arxiv.org/pdf/1705.07832
-    [Torch Implementation https://github.com/danielkelshaw/ConcreteDropout]
-[3] Diederik P. Kingma, Tim Salimans, Max Welling "Variational Dropout and the Local Reparameterization Trick" arxiv.org/pdf/1506.02557
-    [https://github.com/elliothe/Variational_dropout]
-[4] Golnaz Ghiasi, Tsung-Yi Lin, Quoc V. Le. "DropBlock: A regularization method for convolutional networks" arxiv.org/pdf/1810.12890
-    [Torch Implementation https://github.com/miguelvr/dropblock]
-[5] Yoshihiro Yamada, Masakazu Iwamura, Takuya Akiba, Koichi Kise. "ShakeDrop Regularization for Deep Residual Learning" arXiv:1802.02375v2
-    [Torch Implementation https://github.com/imenurok/ShakeDrop]
+[1] FER-2013 Dataset: https://www.kaggle.com/datasets/msambare/fer2013  
+[2] Yarin Gal, Jiri Hron, Alex Kendall. "Concrete Dropout" arxiv.org/pdf/1705.07832  
+    [Torch Implementation https://github.com/danielkelshaw/ConcreteDropout]  
+[3] Diederik P. Kingma, Tim Salimans, Max Welling "Variational Dropout and the Local Reparameterization Trick" arxiv.org/pdf/1506.02557  
+    [https://github.com/elliothe/Variational_dropout]  
+[4] Golnaz Ghiasi, Tsung-Yi Lin, Quoc V. Le. "DropBlock: A regularization method for convolutional networks" arxiv.org/pdf/1810.12890  
+    [Torch Implementation https://github.com/miguelvr/dropblock]  
+[5] Yoshihiro Yamada, Masakazu Iwamura, Takuya Akiba, Koichi Kise. "ShakeDrop Regularization for Deep Residual Learning" arXiv:1802.02375v2  
+    [Torch Implementation https://github.com/imenurok/ShakeDrop]  
