@@ -2,6 +2,7 @@
 <p align="center">
 <img src="https://www.imghippo.com/i/Afe1J1724038781.png">
 </p>
+
 ## Overview
 This project explores and compares various dropout methods for improving the generalization of deep neural networks. Specifically, we focus on evaluating the effectiveness of different dropout techniques in the context of emotion classification using the ResNet-18 architecture on the FER13 dataset.
 
