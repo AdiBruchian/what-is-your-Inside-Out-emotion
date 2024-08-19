@@ -6,7 +6,8 @@ This project explores and compares various dropout methods for improving the gen
 
 ## Motivation
 No Dropout:
-![](icons/original_results.png)
+
+<img src="icons/original_results.png" alt="Results" width="400" />
 
 ## Methodology
 1- Each dropout method was tested with various parameters on the **validation set** to identify the best-performing configuration.  
