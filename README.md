@@ -11,7 +11,6 @@ This project explores and compares various dropout methods for improving the gen
 ## Dataset
 We use the FER13 dataset, which contains grayscale images classified into seven distinct emotions. 
 
-
 ![](icons/classes.png)
 
 
@@ -30,6 +29,11 @@ drops_methods/resnet_shakedrop.py | Implements the ResNet-18 model with ShakeDro
 checkpoints | Directory that stores model checkpoints during training.
 results | Directory that contains JSON files with experiment results for different dropout methods and parameters on the validation set.
 best_results | Directory that contains JSON files with the best results and parameters for each dropout method on the test set.
+
+
+## Results
+
+
 
 ## References
 [1] FER-2013 Dataset: https://www.kaggle.com/datasets/msambare/fer2013  
