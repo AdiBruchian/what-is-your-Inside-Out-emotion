@@ -4,6 +4,10 @@
 ## Overview
 This project explores and compares various dropout methods for improving the generalization of deep neural networks. Specifically, we focus on evaluating the effectiveness of different dropout techniques in the context of emotion classification using the ResNet-18 architecture on the FER13 dataset.
 
+## Motivation
+No Dropout:
+![](icons/original_results.png)
+
 ## Methodology
 1- Each dropout method was tested with various parameters on the **validation set** to identify the best-performing configuration.  
 2- The best parameters were then used to evaluate performance on the **test set**.
@@ -33,7 +37,20 @@ best_results | Directory that contains JSON files with the best results and para
 
 ## Results
 
+Regular Dropout:
+![](icons/dropout_results.png)
 
+Variational Dropout:
+![](icons/variational_results.png)
+
+Concrete Dropout:
+![](icons/concrete_results.png)
+
+Shake-Drop:
+![](icons/shakedrop_results.png)
+
+Drop Block:
+![](icons/dropblock_results.png)
 
 ## References
 [1] FER-2013 Dataset: https://www.kaggle.com/datasets/msambare/fer2013  
