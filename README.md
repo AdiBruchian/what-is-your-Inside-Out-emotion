@@ -1,3 +1,4 @@
+![](icons/resized/project%20logo.png)
 
 <p align="center">
 <img src="https://imgtr.ee/image/hiIlGX/3a1cec4acb82e359a43ebb8c49d2aefc.png">
