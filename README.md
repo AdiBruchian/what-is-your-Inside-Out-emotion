@@ -1,6 +1,6 @@
 
 <p align="center">
-<img src="https://www.imghippo.com/i/Afe1J1724038781.png">
+<img src="https://imgtr.ee/image/hiIlGX">
 </p>
 
 ## Overview
