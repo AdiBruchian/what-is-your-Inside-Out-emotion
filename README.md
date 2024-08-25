@@ -48,7 +48,7 @@ results | Directory that contains JSON files with experiment results for differe
 ## Validation
 We evaluated each dropout method with various parameters on the validation set to identify the optimal settings for the task. The method that yielded the best results was ShakeDrop, demonstrating a 3.16% improvement compared to the model without any regularization.
 ![](results/best_results/best_results_val.png)
-<img src="images/exp.png" alt="Experiment Image" width="600" height="400" />
+<img src="results/best_results/best_results_val.png" alt="Experiment Image" width="600" height="400" />
 The full results are in the "results" folder.
 
 ## Test
