@@ -34,13 +34,13 @@ dropout_methods/resnet_shakedrop.py | Implements the ResNet-18 model with ShakeD
 checkpoints | Directory that stores model checkpoints during training.
 results | Directory that contains JSON files with experiment results for different dropout methods and parameters on the validation set.
 
-## Results
-# Validation
+# Results
+## Validation
 We evaluated each dropout method with various parameters on the validation set to identify the optimal settings for the task. The method that yielded the best results was ShakeDrop, demonstrating a 3.16% improvement compared to the model without any regularization.
 ![](results/best_results/best_results_val.png)
 The full results are in the "results" folder.
 
-# Test
+## Test
 We selected the top-performing model from each dropout method and assessed their performance on the test set. 
 Although ShakeDrop performed the best on the validation set, DropBlock outperformed it on the test set.
  
