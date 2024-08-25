@@ -61,7 +61,7 @@ pip install -r requirements.txt
 3. Download the Dataset
 Download the FER-2013 dataset from  https://www.kaggle.com/datasets/msambare/fer2013 and place it in "dataset" directory. 
 
-4. run the nootbok "emotions_detector.ipynb"
+4. Run the notebook "emotions_detector.ipynb"
 
 
 &nbsp;
