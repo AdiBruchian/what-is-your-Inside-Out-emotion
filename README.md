@@ -44,6 +44,28 @@ dropout_methods/resnet_shakedrop.py | Implements the ResNet-18 model with ShakeD
 checkpoints | Directory that stores model checkpoints during training.
 results | Directory that contains JSON files with experiment results for different dropout methods and parameters on the validation set.
 
+# How to run this code
+1. To run this code, follow these steps:
+Installation using using anaconda package management
+
+Clone the Repository
+```
+git clone https://github.com/yourusername/yourproject.git
+cd yourproject
+```
+
+Install required packages
+```
+conda install anaconda dill tensorflow tensorboard pillow joblib
+```
+
+Install pyshdom distribution with (either install or develop flag)
+```
+python setup.py develop
+```
+
+&nbsp;
+
 # Results
 ## Validation
 We evaluated each dropout method with various parameters on the validation set to identify the optimal settings for the task. The method that yielded the best results was ShakeDrop, demonstrating a 3.16% improvement compared to the model without any regularization.
