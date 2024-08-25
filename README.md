@@ -44,6 +44,7 @@ dropout_methods/resnet_dropblock.py | Implements the ResNet-18 model with DropBl
 dropout_methods/resnet_shakedrop.py | Implements the ResNet-18 model with ShakeDrop layers.
 checkpoints | Directory that stores model checkpoints during training.
 results | Directory that contains JSON files with experiment results for different dropout methods and parameters on the validation set.
+images | Directory that contains all the images that used in the project.
 
 # How to run this code
 To run this code, follow these steps:
@@ -59,7 +60,7 @@ cd what-is-your-Inside-Out-emotion
 pip install -r requirements.txt
 ```
 
-3. Download the Dataset
+3. Download the Dataset  
 Download the FER-2013 dataset from  https://www.kaggle.com/datasets/msambare/fer2013 and place it in "dataset" directory. 
 
 4. Run the notebook "emotions_detector.ipynb"
