@@ -1,22 +1,24 @@
 ![](images/project_logo.png)
 
 
-## Overview
+# Overview
 The goal of this project is to examine how various regularization methods affect the performance of deep neural networks. 
 Specifically, we investigate the impact of different dropout techniques on the performance of emotion classification using the FER-13 dataset with a ResNet-18 architecture.
 
-## Motivation
+# Motivation
 Overfitting is a common challenge in deep learning, where models perform well on training data but poorly on unseen data. This occurs when a model learns noise and details specific to the training set rather than general patterns. Dropout techniques help mitigate overfitting by randomly deactivating neurons during training, encouraging models to learn more robust features. This project compares various dropout methods to identify the most effective strategy for enhancing model generalization and performance.
 
-
-## Methodology
-1- Each dropout method was tested with various parameters on the **validation set** to identify the best-performing configuration.  
-2- The best parameters were then used to evaluate performance on the **test set**.
+# Methodology
+## Architecture
 
 ## Dataset
 We use the FER13 dataset, which contains grayscale images classified into seven distinct emotions. 
-
 ![](icons/classes.png)
+
+## Hyper Parameters
+During our experiments we used the Cross Entropy Loss as criterion, the SGD with fixed momentum 0.9 as optimizer and kept the standard hyper parameters constant with the following values: Batch size = 64, 
+Epochs = 100, and Learning rate = 0.005
+However, for each of the dropout methods we examined a set of its hyper parameters and chose those which received the best results.
 
 
 # Files in this repository
@@ -58,12 +60,12 @@ Finally, we examined the generalization of our model, which was trained using th
 Some images received "correct" label, and some of them did not:
 ![](results/best_results/exp.png)
 
-## Conclusion
+# Conclusion
 ShakeDrop and DropBlock both enhanced generalization, with DropBlock achieving the highest test accuracy. DropBlock’s effectiveness lies in its ability to drop contiguous feature map regions, forcing the network to rely on different image areas and improving robustness by making the network recognize objects even when parts are missing.
 
 Future work could explore varying architectures, regularization methods, and hyperparameters to further improve generalization.
 
-## References
+# References
 [1] FER-2013 Dataset: https://www.kaggle.com/datasets/msambare/fer2013  
 [2] Yarin Gal, Jiri Hron, Alex Kendall. "Concrete Dropout" arxiv.org/pdf/1705.07832  
     [Torch Implementation https://github.com/danielkelshaw/ConcreteDropout]  
