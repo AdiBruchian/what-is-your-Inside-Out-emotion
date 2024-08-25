@@ -48,21 +48,22 @@ results | Directory that contains JSON files with experiment results for differe
 1. To run this code, follow these steps:
 Installation using using anaconda package management
 
-Clone the Repository
+1. Clone the Repository
 ```
 git clone https://github.com/yourusername/yourproject.git
 cd yourproject
 ```
 
-Install required packages
+2. Install required packages
 ```
-conda install anaconda dill tensorflow tensorboard pillow joblib
+pip install -r requirements.txt
 ```
 
-Install pyshdom distribution with (either install or develop flag)
-```
-python setup.py develop
-```
+3. Download the Dataset
+Download the FER-2013 dataset from  https://www.kaggle.com/datasets/msambare/fer2013 and place it in "dataset" directory. 
+
+4. run the nootbok "emotions_detector.ipynb"
+
 
 &nbsp;
 
