@@ -1,4 +1,4 @@
-![](icons/project_logo.png)
+![](images/project_logo.png)
 
 
 ## Overview
@@ -8,7 +8,6 @@ Specifically, we investigate the impact of different dropout techniques on the p
 ## Motivation
 Overfitting is a common challenge in deep learning, where models perform well on training data but poorly on unseen data. This occurs when a model learns noise and details specific to the training set rather than general patterns. Dropout techniques help mitigate overfitting by randomly deactivating neurons during training, encouraging models to learn more robust features. This project compares various dropout methods to identify the most effective strategy for enhancing model generalization and performance.
 
-<img src="icons/original_results.png" alt="Results" width="400" />
 
 ## Methodology
 1- Each dropout method was tested with various parameters on the **validation set** to identify the best-performing configuration.  
@@ -57,8 +56,12 @@ ShakeDrop  |  1.562  |  60.35%
 ## Examining Generalization on our images
 Finally, we examined the generalization of our model, which was trained using the DropBlock regularization on our images. 
 Some images received "correct" label, and some of them did not:
+![](results/best_results/exp.png)
 
+## Conclusion
+ShakeDrop and DropBlock both enhanced generalization, with DropBlock achieving the highest test accuracy. DropBlock’s effectiveness lies in its ability to drop contiguous feature map regions, forcing the network to rely on different image areas and improving robustness by making the network recognize objects even when parts are missing.
 
+Future work could explore varying architectures, regularization methods, and hyperparameters to further improve generalization.
 
 ## References
 [1] FER-2013 Dataset: https://www.kaggle.com/datasets/msambare/fer2013  
