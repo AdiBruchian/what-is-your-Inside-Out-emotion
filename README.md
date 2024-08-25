@@ -26,33 +26,39 @@ File Name   | Purpose
 ------------- | -------------
 emotions_detector.ipynb  | Main notebook to run and visualize experiments.
 utils.py  | Contains utility functions for data processing, training and evaluation, results visualization, and output saving.
-resnet_model.py  | Implements the base ResNet-18 architecture used across all experiments.
-drops_methods/resnet_dropout.py | Implements the ResNet-18 model with standard dropout layers.
-drops_methods/resnet_concrete.py | 	Implements the ResNet-18 model with Concrete Dropout layers.
-drops_methods/resnet_variational.py | Implements the ResNet-18 model with Variational Dropout layers.
-drops_methods/resnet_dropblock.py | Implements the ResNet-18 model with DropBlock layers.
-drops_methods/resnet_shakedrop.py | Implements the ResNet-18 model with ShakeDrop layers.
+dropout_methods/resnet_model.py  | Implements the base ResNet-18 architecture used across all experiments.
+dropout_methods/resnet_dropout.py | Implements the ResNet-18 model with standard dropout layers.
+dropout_methods/resnet_concrete.py | 	Implements the ResNet-18 model with Concrete Dropout layers.
+dropout_methods/resnet_variational.py | Implements the ResNet-18 model with Variational Dropout layers.
+dropout_methods/resnet_dropblock.py | Implements the ResNet-18 model with DropBlock layers.
+dropout_methods/resnet_shakedrop.py | Implements the ResNet-18 model with ShakeDrop layers.
 checkpoints | Directory that stores model checkpoints during training.
 results | Directory that contains JSON files with experiment results for different dropout methods and parameters on the validation set.
-best_results | Directory that contains JSON files with the best results and parameters for each dropout method on the test set.
-
 
 ## Results
+# Validation
+We evaluated each dropout method with various parameters on the validation set to identify the optimal settings for the task. The method that yielded the best results was ShakeDrop, demonstrating a 3.16% improvement compared to the model without any regularization.
+![](images/best_results_val.png)
+The full results are in the "results" folder.
 
-Regular Dropout:
-![](icons/dropout_results.png)
+# Test
+We selected the top-performing model from each dropout method and assessed their performance on the test set. 
+Although ShakeDrop performed the best on the validation set, DropBlock outperformed it on the test set.
+ 
+Method   | Test Loss   | Test Accuracy
+------------- | ------------- | -------------
+Original ResNet18  |  3.184  |  58.15%
+Dropout  |  3.034  |  58.21%
+Variational   |  1.835  |  58.78%
+Concrete  |  3.084  |  58.58%
+DropBlock   |  1.841  |  60.43%
+ShakeDrop  |  1.562  |  60.35%
 
-Variational Dropout:
-![](icons/variational_results.png)
+## Examining Generalization on our images
+Finally, we examined the generalization of our model, which was trained using the DropBlock regularization on our images. 
+Some images received "correct" label, and some of them did not:
 
-Concrete Dropout:
-![](icons/concrete_results.png)
 
-Shake-Drop:
-![](icons/shakedrop_results.png)
-
-Drop Block:
-![](icons/dropblock_results.png)
 
 ## References
 [1] FER-2013 Dataset: https://www.kaggle.com/datasets/msambare/fer2013  
