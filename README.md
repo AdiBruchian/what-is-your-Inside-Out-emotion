@@ -89,7 +89,7 @@ ShakeDrop  |  1.562  |  60.35%
 ## Examining Generalization on our images
 Finally, we examined the generalization of our model, which was trained using the DropBlock regularization on our images. 
 Some images received "correct" label, and some of them did not:
-![](results/exp.png)
+![](images/exp.png)
 
 # Conclusion
 ShakeDrop and DropBlock both enhanced generalization, with DropBlock achieving the highest test accuracy. DropBlock’s effectiveness lies in its ability to drop contiguous feature map regions, forcing the network to rely on different image areas and improving robustness by making the network recognize objects even when parts are missing.
