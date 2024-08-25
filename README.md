@@ -45,13 +45,12 @@ checkpoints | Directory that stores model checkpoints during training.
 results | Directory that contains JSON files with experiment results for different dropout methods and parameters on the validation set.
 
 # How to run this code
-1. To run this code, follow these steps:
-Installation using using anaconda package management
+To run this code, follow these steps:
 
 1. Clone the Repository
 ```
-git clone https://github.com/yourusername/yourproject.git
-cd yourproject
+git clone https://github.com/AdiBruchian/what-is-your-Inside-Out-emotion.git
+cd what-is-your-Inside-Out-emotion
 ```
 
 2. Install required packages
