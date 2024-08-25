@@ -2,10 +2,11 @@
 
 
 ## Overview
-This project explores and compares various dropout methods for improving the generalization of deep neural networks. Specifically, we focus on evaluating the effectiveness of different dropout techniques in the context of emotion classification using the ResNet-18 architecture on the FER13 dataset.
+The goal of this project is to examine how various regularization methods affect the performance of deep neural networks. 
+Specifically, we investigate the impact of different dropout techniques on the performance of emotion classification using the FER-13 dataset with a ResNet-18 architecture.
 
 ## Motivation
-No Dropout:
+Overfitting is a common challenge in deep learning, where models perform well on training data but poorly on unseen data. This occurs when a model learns noise and details specific to the training set rather than general patterns. Dropout techniques help mitigate overfitting by randomly deactivating neurons during training, encouraging models to learn more robust features. This project compares various dropout methods to identify the most effective strategy for enhancing model generalization and performance.
 
 <img src="icons/original_results.png" alt="Results" width="400" />
 
