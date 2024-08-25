@@ -48,6 +48,7 @@ results | Directory that contains JSON files with experiment results for differe
 ## Validation
 We evaluated each dropout method with various parameters on the validation set to identify the optimal settings for the task. The method that yielded the best results was ShakeDrop, demonstrating a 3.16% improvement compared to the model without any regularization.
 ![](results/best_results/best_results_val.png)
+<img src="images/exp.png" alt="Experiment Image" width="600" height="400" />
 The full results are in the "results" folder.
 
 ## Test
@@ -66,7 +67,7 @@ ShakeDrop  |  1.562  |  60.35%
 ## Examining Generalization on our images
 Finally, we examined the generalization of our model, which was trained using the DropBlock regularization on our images. 
 Some images received "correct" label, and some of them did not:
-<img src="images/exp.png" alt="Experiment Image" width="150" height="100" />
+![](results/best_results/exp.png)
 
 # Conclusion
 ShakeDrop and DropBlock both enhanced generalization, with DropBlock achieving the highest test accuracy. DropBlock’s effectiveness lies in its ability to drop contiguous feature map regions, forcing the network to rely on different image areas and improving robustness by making the network recognize objects even when parts are missing.
