@@ -119,12 +119,28 @@ class ConcreteDropout(nn.Module):
     
 
 
-
-
 class BasicBlock(nn.Module):
+    """
+    Basic building block for ResNet.
+    
+    Each BasicBlock consists of two convolutional layers with BatchNorm and ReLU activation.
+    """
+
     expansion = 1
 
     def __init__(self, in_planes, planes, stride=1):
+        """
+        Initialize BasicBlock.
+
+        Parameters
+        ----------
+        in_planes : int
+            Number of input channels.
+        planes : int
+            Number of output channels.
+        stride : int
+            Stride of the convolutional layers.
+        """
         super(BasicBlock, self).__init__()
         self.conv1 = nn.Conv2d(in_planes, planes, kernel_size=3, stride=stride, padding=1, bias=False)
         self.bn1 = nn.BatchNorm2d(planes)
@@ -139,6 +155,19 @@ class BasicBlock(nn.Module):
             )
 
     def forward(self, x):
+        """
+        Forward pass through the BasicBlock.
+
+        Parameters
+        ----------
+        x : Tensor
+            Input tensor to the block.
+
+        Returns
+        -------
+        Tensor
+            Output tensor after passing through the block.
+        """
         out = F.relu(self.bn1(self.conv1(x)))
         out = self.bn2(self.conv2(out))
         out += self.shortcut(x)
@@ -147,7 +176,25 @@ class BasicBlock(nn.Module):
 
 
 class ResNet_with_Concrete(nn.Module):
+    """
+    ResNet with Concrete Dropout integration.
+    
+    This model implements ResNet architecture and uses ConcreteDropout in the final fully connected layer.
+    """
+
     def __init__(self, block, num_blocks, num_classes=7):
+        """
+        Initialize ResNet with Concrete Dropout.
+
+        Parameters
+        ----------
+        block : nn.Module
+            The block type to use (e.g., BasicBlock).
+        num_blocks : list
+            Number of blocks in each layer of the ResNet.
+        num_classes : int
+            Number of output classes.
+        """
         super(ResNet_with_Concrete, self).__init__()
         self.in_planes = 64
 
@@ -159,9 +206,28 @@ class ResNet_with_Concrete(nn.Module):
         self.layer4 = self._make_layer(block, 512, num_blocks[3], stride=2)
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
         self.fc = nn.Linear(512 * block.expansion, num_classes)
-        self.concrete_dropout_fc = ConcreteDropout(weight_regulariser=1e-4,dropout_regulariser=1e-4,init_min=0.1,init_max=0.1)
+        self.concrete_dropout_fc = ConcreteDropout(weight_regulariser=1e-4, dropout_regulariser=1e-4, init_min=0.1, init_max=0.1)
 
     def _make_layer(self, block, planes, num_blocks, stride):
+        """
+        Create a sequential layer of ResNet blocks.
+
+        Parameters
+        ----------
+        block : nn.Module
+            The block type to use.
+        planes : int
+            Number of output channels for the blocks.
+        num_blocks : int
+            Number of blocks in the layer.
+        stride : int
+            Stride of the first convolutional block in the layer.
+
+        Returns
+        -------
+        nn.Sequential
+            Sequential container of ResNet blocks.
+        """
         strides = [stride] + [1] * (num_blocks - 1)
         layers = []
         for stride in strides:
@@ -170,6 +236,19 @@ class ResNet_with_Concrete(nn.Module):
         return nn.Sequential(*layers)
 
     def forward(self, x):
+        """
+        Forward pass through the ResNet model.
+
+        Parameters
+        ----------
+        x : Tensor
+            Input tensor to the model.
+
+        Returns
+        -------
+        Tensor
+            Output tensor after passing through the model.
+        """
         x = F.relu(self.bn1(self.conv1(x)))
         x = F.max_pool2d(x, kernel_size=3, stride=2, padding=1)
         x = self.layer1(x)
@@ -181,8 +260,22 @@ class ResNet_with_Concrete(nn.Module):
         x = self.concrete_dropout_fc(x, self.fc)
 
         return x
-    
 
 
-def ResNet18_Concrete(dropout_rate = 0.0, num_classes=7):
+def ResNet18_Concrete(dropout_rate=0.0, num_classes=7):
+    """
+    Create a ResNet-18 model with Concrete Dropout.
+
+    Parameters
+    ----------
+    dropout_rate : float
+        Dropout rate to be used in Concrete Dropout.
+    num_classes : int
+        Number of output classes.
+
+    Returns
+    -------
+    ResNet_with_Concrete
+        A ResNet-18 model with Concrete Dropout.
+    """
     return ResNet_with_Concrete(BasicBlock, [2, 2, 2, 2], num_classes=num_classes)
