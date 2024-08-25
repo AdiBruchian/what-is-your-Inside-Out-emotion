@@ -13,11 +13,12 @@ Overfitting is a common challenge in deep learning, where models perform well on
 
 ## Dataset
 We use the FER13 dataset, which contains grayscale images classified into seven distinct emotions. 
-![](icons/classes.png)
+![](images/classes.png)
 
 ## Hyper Parameters
 During our experiments we kept the standard hyper parameters constant with the following values:
-------------- | ------------- | -------------
+parameter   | Value
+------------- | -------------
 criterion  |  Cross Entropy
 optimizer  |  SGD
 momentum   |  0.9
@@ -65,7 +66,7 @@ ShakeDrop  |  1.562  |  60.35%
 ## Examining Generalization on our images
 Finally, we examined the generalization of our model, which was trained using the DropBlock regularization on our images. 
 Some images received "correct" label, and some of them did not:
-![](images/exp.png)
+<img src="images/exp.png" alt="Experiment Image" width="600" height="400" />
 
 # Conclusion
 ShakeDrop and DropBlock both enhanced generalization, with DropBlock achieving the highest test accuracy. DropBlock’s effectiveness lies in its ability to drop contiguous feature map regions, forcing the network to rely on different image areas and improving robustness by making the network recognize objects even when parts are missing.
