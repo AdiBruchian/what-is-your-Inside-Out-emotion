@@ -10,6 +10,7 @@ Overfitting is a common challenge in deep learning, where models perform well on
 
 # Methodology
 ## Architecture
+We used ResNet18 as the base model for our experiments. ResNet18 is a convolutional neural network (CNN) from the ResNet (Residual Network) family, specifically designed to mitigate the vanishing gradient problem in deep networks. Building upon this architecture, we implemented various dropout methods to evaluate their effectiveness.
 
 ## Dataset
 We use the FER13 dataset, which contains grayscale images classified into seven distinct emotions. 
@@ -88,7 +89,7 @@ ShakeDrop  |  1.562  |  60.35%
 ## Examining Generalization on our images
 Finally, we examined the generalization of our model, which was trained using the DropBlock regularization on our images. 
 Some images received "correct" label, and some of them did not:
-![](results/best_results/exp.png)
+![](results/exp.png)
 
 # Conclusion
 ShakeDrop and DropBlock both enhanced generalization, with DropBlock achieving the highest test accuracy. DropBlock’s effectiveness lies in its ability to drop contiguous feature map regions, forcing the network to rely on different image areas and improving robustness by making the network recognize objects even when parts are missing.
